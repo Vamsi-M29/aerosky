@@ -47,7 +47,7 @@ A premium, glassmorphic weather tracking application that provides real-time atm
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/aerosky-weather.git
+   git clone https://github.com/Vamsi-M29/aerosky.git
    cd aerosky-weather
    ```
 
