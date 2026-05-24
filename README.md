@@ -1,6 +1,6 @@
 # AeroSky Weather Dashboard
 
-A premium, glassmorphic weather tracking application that provides real-time atmospheric observations and forecasts with dynamic ambient visuals. Built with **React 19**, **TypeScript**, **Vite**, and animated using **Framer Motion**.
+A glassmorphic weather tracking application that provides real-time atmospheric observations and forecasts with dynamic ambient visuals. Built with **React 19**, **TypeScript**, **Vite**, and animated using **Framer Motion**.
 
 ---
 
