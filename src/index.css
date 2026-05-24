@@ -243,3 +243,160 @@ input[type="search"]::-webkit-search-results-decoration {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }
+
+/* Mobile-first Layout & Card Padding */
+.dashboard-container {
+  min-height: 100vh;
+  width: 100%;
+  padding: 24px 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 600px) {
+  .dashboard-container {
+    padding: 40px 24px;
+  }
+}
+
+.dashboard-card {
+  padding: 20px 16px;
+}
+
+@media (min-width: 600px) {
+  .dashboard-card {
+    padding: 32px;
+  }
+}
+
+/* Current Weather Card responsiveness */
+.main-temp-text {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -2px;
+  color: var(--theme-text-primary);
+}
+
+@media (min-width: 600px) {
+  .main-temp-text {
+    font-size: 84px;
+  }
+}
+
+.current-icon-container {
+  width: 90px;
+  height: 90px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: inset 0 0 20px rgba(255,255,255,0.02);
+  color: var(--theme-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.current-icon-container svg {
+  width: 48px;
+  height: 48px;
+}
+
+@media (min-width: 600px) {
+  .current-icon-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 30px;
+  }
+  .current-icon-container svg {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.temp-stats-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .temp-stats-row {
+    gap: 24px;
+  }
+}
+
+/* Daily Forecast item layout */
+.daily-forecast-item {
+  display: grid;
+  grid-template-columns: 75px 35px 1fr;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.01);
+  border: 1px solid rgba(255,255,255,0.02);
+  gap: 10px;
+  transition: all 0.2s ease;
+}
+
+@media (min-width: 600px) {
+  .daily-forecast-item {
+    grid-template-columns: 120px 150px minmax(100px, 1fr);
+    padding: 18px 20px;
+    border-radius: 16px;
+    gap: 16px;
+  }
+}
+
+.daily-icon-desc {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+}
+
+.daily-desc-label {
+  font-size: 13px;
+  color: var(--theme-text-secondary);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .daily-desc-label {
+    display: inline;
+  }
+}
+
+/* Responsive Range progress bar */
+.daily-range-progress-wrapper {
+  display: none;
+}
+
+@media (min-width: 400px) {
+  .daily-range-progress-wrapper {
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 2px;
+    position: relative;
+  }
+}
+
+@media (min-width: 600px) {
+  .daily-range-progress-wrapper {
+    width: 80px;
+  }
+}
+

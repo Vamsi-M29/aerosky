@@ -58,9 +58,8 @@ export const CurrentWeatherCard: React.FC<CurrentWeatherCardProps> = ({ data, is
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="glass-panel"
+      className="glass-panel dashboard-card"
       style={{
-        padding: '32px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -120,34 +119,14 @@ export const CurrentWeatherCard: React.FC<CurrentWeatherCardProps> = ({ data, is
             initial={{ scale: 0.7, rotate: -15, opacity: 0 }}
             animate={{ scale: 1, rotate: 0, opacity: 1 }}
             transition={{ type: 'spring', damping: 15 }}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '120px',
-              height: '120px',
-              borderRadius: '30px',
-              background: 'rgba(255,255,255,0.03)',
-              border: '1px solid rgba(255,255,255,0.05)',
-              boxShadow: 'inset 0 0 20px rgba(255,255,255,0.02)',
-              color: 'var(--theme-accent)',
-            }}
-            className="animate-float"
+            className="current-icon-container animate-float"
           >
-            <IconComponent size={64} strokeWidth={1.5} />
+            <IconComponent strokeWidth={1.5} />
           </motion.div>
 
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
             <div style={{ display: 'flex', alignItems: 'flex-start', fontFamily: 'var(--font-display)' }}>
-              <span
-                style={{
-                  fontSize: '84px',
-                  fontWeight: 800,
-                  lineHeight: 0.9,
-                  letterSpacing: '-2px',
-                  color: 'var(--theme-text-primary)',
-                }}
-              >
+              <span className="main-temp-text">
                 <AnimatedTemp key={currentTemp} value={currentTemp} />
               </span>
               <span
@@ -183,16 +162,7 @@ export const CurrentWeatherCard: React.FC<CurrentWeatherCardProps> = ({ data, is
         </div>
 
         {/* High / Low & Feels Like */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '24px',
-            paddingTop: '20px',
-            borderTop: '1px solid rgba(255,255,255,0.06)',
-            width: '100%',
-          }}
-        >
+        <div className="temp-stats-row">
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '14px', color: 'var(--theme-text-secondary)' }}>
             <Icons.ArrowUp size={16} style={{ color: '#ef4444' }} />
             <span>High: </span>

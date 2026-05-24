@@ -39,11 +39,11 @@ export const ForecastWidget: React.FC<ForecastWidgetProps> = ({ data, isCelsius 
     return `${displayHour} ${ampm}`;
   };
 
-  // Format day name (e.g. "2026-05-23" -> "Saturday")
+  // Format day name (e.g. "2026-05-23" -> "Sat")
   const formatDayName = (isoString: string, index: number) => {
     if (index === 0) return 'Today';
     const date = new Date(isoString);
-    return date.toLocaleDateString('en-US', { weekday: 'long' });
+    return date.toLocaleDateString('en-US', { weekday: 'short' });
   };
 
   // Calculate daily scale for range bars
@@ -173,9 +173,8 @@ export const ForecastWidget: React.FC<ForecastWidgetProps> = ({ data, isCelsius 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.15 }}
-      className="glass-panel"
+      className="glass-panel dashboard-card"
       style={{
-        padding: '32px',
         width: '100%',
         boxShadow: 'var(--shadow-premium)',
       }}
@@ -327,16 +326,7 @@ export const ForecastWidget: React.FC<ForecastWidgetProps> = ({ data, isCelsius 
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.05 }}
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: '120px 150px minmax(100px, 1fr)',
-                    alignItems: 'center',
-                    padding: '18px 20px',
-                    borderRadius: '16px',
-                    background: 'rgba(255,255,255,0.01)',
-                    border: '1px solid rgba(255,255,255,0.02)',
-                    gap: '16px',
-                  }}
+                  className="daily-forecast-item"
                 >
                   {/* Day name */}
                   <span style={{ fontWeight: 600, fontSize: '14px', color: 'var(--theme-text-primary)', textAlign: 'left' }}>
@@ -344,11 +334,11 @@ export const ForecastWidget: React.FC<ForecastWidgetProps> = ({ data, isCelsius 
                   </span>
 
                   {/* Icon and Description */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', textAlign: 'left' }}>
+                  <div className="daily-icon-desc">
                     <span style={{ color: 'var(--theme-accent)', display: 'flex', alignItems: 'center', flexShrink: 0 }}>
                       <Icon size={18} />
                     </span>
-                    <span style={{ fontSize: '13px', color: 'var(--theme-text-secondary)', fontWeight: 500, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                    <span className="daily-desc-label">
                       {meta.label}
                     </span>
                   </div>
@@ -367,7 +357,7 @@ export const ForecastWidget: React.FC<ForecastWidgetProps> = ({ data, isCelsius 
                     </span>
 
                     {/* Apple Style Range Progress Bar */}
-                    <div style={{ width: '80px', height: '4px', background: 'rgba(255,255,255,0.06)', borderRadius: '2px', position: 'relative' }}>
+                    <div className="daily-range-progress-wrapper">
                       <div
                         style={{
                           position: 'absolute',

@@ -69,7 +69,7 @@ export const WeatherDashboard: React.FC = () => {
     : 'clear-day';
 
   return (
-    <div style={{ minHeight: '100vh', width: '100%', padding: '40px 16px', position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+    <div className="dashboard-container">
       {/* Background layer */}
       <WeatherBackground theme={activeTheme} />
 

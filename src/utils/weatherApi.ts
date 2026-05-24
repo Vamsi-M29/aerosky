@@ -1,6 +1,6 @@
 // Weather API Service with OpenWeatherMap & Open-Meteo Fallback
 
-const OWM_API_KEY = "64fcdb1032663a78feabd7f4835645d0";
+const OWM_API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY || "64fcdb1032663a78feabd7f4835645d0";
 
 export interface Location {
   id: number;
