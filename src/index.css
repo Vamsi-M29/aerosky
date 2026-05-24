@@ -264,11 +264,18 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .dashboard-card {
   padding: 20px 16px;
+  height: auto;
 }
 
 @media (min-width: 600px) {
   .dashboard-card {
     padding: 32px;
+  }
+}
+
+@media (min-width: 900px) {
+  .dashboard-card {
+    height: 100%;
   }
 }
 
